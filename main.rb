@@ -10,8 +10,8 @@ configure :development do
     :host     => 'localhost', 
     :adapter  => 'mysql',
     :database => 'wordnet30_development',
-    :username => 'rails',
-    :password => 'rails4242' })
+    :username => '',
+    :password => '' })
     
   DataMapper::Logger.new(STDOUT, :debug)
 end
@@ -21,17 +21,17 @@ configure :production do
     :host     => 'localhost', 
     :adapter  => 'mysql',
     :database => 'wordnet30',
-    :username => 'rails',
-    :password => 'rails4242' })
+    :username => '',
+    :password => '' })
 end
 
 configure :test do
   DataMapper.setup(:default, {
     :host     => 'localhost', 
     :adapter  => 'mysql',
-    :database => 'wordnet30_development',
-    :username => 'rails',
-    :password => 'rails4242' })
+    :database => 'wordnet30_test',
+    :username => '',
+    :password => '' })
 end
 
 class Casedword
