@@ -1,0 +1,23 @@
+#wordnet-search
+  %form{:method => 'post'}
+    %input{:type=>'text', :size=>40, :name=>'lemma', :id=>'lemma_search'}
+    %input{:type =>'submit', :value=>'search'}
+
+#content
+
+  %table.display
+    - @word.attributes.each_pair do |k,v|
+      %tr
+        %td{:class=>'title'}= k
+        %td= v
+  %p
+  
+  %table.display
+    -@word.synsets.each do |synset|
+      %tr
+        %td{:class=>'title'}= synset.categorydef.name
+        %td= synset.definition
+        
+%script
+  :plain
+    document.getElementById('wordnet-search').focus();
