@@ -10,8 +10,8 @@ configure :development do
     :host     => 'localhost', 
     :adapter  => 'mysql',
     :database => 'wordnet30_development',
-    :username => '',
-    :password => '' })
+    :username => 'rails',
+    :password => 'rails4242' })
     
   DataMapper::Logger.new(STDOUT, :debug)
 end
@@ -21,17 +21,17 @@ configure :production do
     :host     => 'localhost', 
     :adapter  => 'mysql',
     :database => 'wordnet30',
-    :username => '',
-    :password => '' })
+    :username => 'rails',
+    :password => 'rails4242' })
 end
 
 configure :test do
   DataMapper.setup(:default, {
     :host     => 'localhost', 
     :adapter  => 'mysql',
-    :database => 'wordnet30_test',
-    :username => '',
-    :password => '' })
+    :database => 'wordnet30_development',
+    :username => 'rails',
+    :password => 'rails4242' })
 end
 
 class Casedword
@@ -39,7 +39,7 @@ class Casedword
   storage_names[:default]='casedword'
   property :wordid, Integer, :key => true
   property :lemma,  String
-  has n, :senses, :child_key => [:casedwordid]
+  has 1, :sense, :child_key => [:casedwordid]
 end
 
 class Wordposition
@@ -47,6 +47,7 @@ class Wordposition
   storage_names[:default]='wordposition'
   property :synsetid, Integer, :key => true
   property :wordid,   Integer, :key => true
+  belongs_to :sense, :child_key => [:synsetid, :wordid]
 end
 
 class Sample
