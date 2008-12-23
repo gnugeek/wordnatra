@@ -1,0 +1,20 @@
+development:
+  host:     localhost
+  adapter:  mysql
+  database: wordnet30_development
+  username: user
+  password: password
+
+test:
+  host:     localhost
+  adapter:  mysql
+  database: wordnet30_test
+  username: user
+  password: password
+  
+production:
+  host:     localhost
+  adapter:  mysql
+  database: wordnet30
+  username: user
+  password: password
