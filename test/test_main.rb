@@ -42,13 +42,10 @@ end
 
 describe 'Word class' do
   setup do 
-    @word = Word.first
+    @word = Word.first(:lemma => 'love')
   end  
-  it 'should have at least one sense' do
-    assert_instance_of Sense, @word.senses.first
-  end  
-  it 'should have at least one synset' do
-    assert_instance_of Synset, @word.synsets.first
+  it 'should be the word love' do
+    assert_equal 79377, @word.wordid
   end
 end
 

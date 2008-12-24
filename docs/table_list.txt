@@ -1,0 +1,38 @@
++---------------------+
+| Tables_in_wordnet30 |
++---------------------+
+| casedword           | 
+| categorydef         | 
+| framedef            | 
+| frameref            | 
+| legacy2021          | 
+| legacy2030          | 
+| legacy2130          | 
+| legacysensekey2021  | 
+| legacysensekey2030  | 
+| legacysensekey2130  | 
+| lexlinkref          | 
+| linkdef             | 
+| morphdef            | 
+| morphref            | 
+| sample              | 
+| semlinkref          | 
+| sense               | 
+| sentencedef         | 
+| sentenceref         | 
+| synset              | 
+| vnclass             | 
+| vnexampledef        | 
+| vnexampleref        | 
+| vnframedef          | 
+| vnframeref          | 
+| vnrole              | 
+| vnroletype          | 
+| vnselrestr          | 
+| vnselrestrs         | 
+| word                | 
+| wordposition        | 
+| xwnparselft         | 
+| xwnwsd              | 
++---------------------+
+
