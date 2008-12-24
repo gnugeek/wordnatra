@@ -1,5 +1,5 @@
 -- exploring relationships betweent tables
-select sense.wordid, wordposition.positionid, word.lemma,
+select sense.wordid, word.lemma,
 synset.definition, sample.sample, categorydef.name,
 sentenceref.sentenceid, sentencedef.sentence,
 frameref.frameid, framedef.frame,
@@ -18,7 +18,7 @@ left outer join frameref on sense.synsetid = frameref.synsetid and sense.wordid 
 left outer join framedef on frameref.frameid = framedef.frame 
 left outer join morphref on word.wordid = morphref.wordid
 left outer join morphdef on morphref.morphid = morphdef.morphid
-where word.lemma = 'love';
+where word.lemma = 'love' and sense.rank = 2
 
 -- hypernyms horse (n)
 select se1.rank,w2.lemma

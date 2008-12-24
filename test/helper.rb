@@ -1,0 +1,5 @@
+require 'rubygems'
+require 'spec'
+require 'sinatra'
+require 'sinatra/test/rspec'
+require 'main'
