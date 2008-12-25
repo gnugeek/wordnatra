@@ -1,0 +1,12 @@
+%table.display
+  - @word.attributes.each_pair do |k,v|
+    %tr
+      %td{:class=>'title'}= k
+      %td= v
+%p
+
+%table.display
+  -@word.synsets.each do |synset|
+    %tr
+      %td{:class=>'title'}= synset.categorydef.name
+      %td= synset.definition

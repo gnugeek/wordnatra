@@ -5,6 +5,7 @@ require 'dm-validations'
 require 'sass'
 require 'logger'
 require 'yaml'
+require 'helpers'
 
 Dir.glob(File.join(File.dirname(__FILE__), 'models/*.rb')).each {|f| require f }
 DBCONFIG = YAML.load_file('database.yml') unless defined?(DBCONFIG)
@@ -40,13 +41,18 @@ configure :production do
 end
 
 get '/' do
-  @word ||= Word.first(:lemma => 'hello')
   haml :index
 end
 
 post '/' do
+  redirect "word/#{params[:lemma]}"
   @word = Word.first(:lemma => params[:lemma])
   haml :index
+end
+
+get '/word/:lemma' do
+  @word = Word.first(:lemma => params[:lemma])
+  haml :word
 end
 
 get '/stylesheets/style.css' do

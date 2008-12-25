@@ -1,23 +1,23 @@
-#wordnet-search
-  %form{:method => 'post'}
-    %input{:type=>'text', :size=>40, :name=>'lemma', :id=>'lemma_search'}
-    %input{:type =>'submit', :value=>'search'}
-
 #content
 
-  %table.display
-    - @word.attributes.each_pair do |k,v|
-      %tr
-        %td{:class=>'title'}= k
-        %td= v
-  %p
-  
-  %table.display
-    -@word.synsets.each do |synset|
-      %tr
-        %td{:class=>'title'}= synset.categorydef.name
-        %td= synset.definition
-        
-%script
-  :plain
-    document.getElementById('wordnet-search').focus();
+#wordnatra-info
+Welcome to Wordnatra.
+%br  
+Wordnatra is an interface to Princeton's "Wordnet" lexical dictionary.
+%br
+To get started, search for a word.
+%p
+For information on this project and the technologies used, see the following links:
+%p
+
+=link_to 'Wordnatra', 'http://github.com/gnugeek/wordnatra/tree/master'
+%br
+=link_to 'Wordnet', 'http://wordnet.princeton.edu/' 
+%br
+=link_to 'Ruby', 'http://www.ruby-lang.org/en/'
+%br
+=link_to 'MySQL', 'http://www.mysql.com/'
+%br
+=link_to 'Sinatra', 'http://sinatra.rubyforge.org/'
+%br
+=link_to 'DataMapper', 'http://datamapper.org/doku.php'

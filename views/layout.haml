@@ -6,4 +6,16 @@
   %body
     #banner Wordnatra
     %br
-    = yield
+    
+    #wordnet-search
+    %form{:method => 'post', :action => '/'}
+      %input{:type=>'text', :size=>40, :name=>'lemma', :id=>'lemma_search'}
+      %input{:type =>'submit', :value=>'search'}
+      
+      %p
+    
+      = yield
+    
+%script
+  :plain
+    document.getElementById('wordnet-search').focus();
