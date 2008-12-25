@@ -1,9 +1,10 @@
 require 'rubygems'
-require 'sinatra'
+require 'sinatra/lib/sinatra.rb'
 
-# Sinatra defines #set at the top level as a way to set application configuration
-set :run, false
-set :env, (ENV['RACK_ENV'] ? ENV['RACK_ENV'].to_sym : :development)
+Sinatra::Application.default_options.merge!(
+  :run => false,
+  :env => :production
+)
 
-require 'main'
+require 'main.rb'
 run Sinatra.application
