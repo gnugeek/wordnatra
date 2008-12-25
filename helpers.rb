@@ -1,3 +1,3 @@
 def link_to(label,url)
-  %{<a href="http://#{url}">#{label}</a>}
+  %{<a href="#{url}">#{label}</a>}
 end
