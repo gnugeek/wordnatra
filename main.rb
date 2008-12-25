@@ -46,8 +46,6 @@ end
 
 post '/' do
   redirect "word/#{params[:lemma]}"
-  @word = Word.first(:lemma => params[:lemma])
-  haml :index
 end
 
 get '/word/:lemma' do
