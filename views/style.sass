@@ -1,5 +1,6 @@
 body
   :background #000
+  :min-width 750px
 
 a:link
   :color #556
@@ -32,12 +33,10 @@ a:link
   :margin 5px
   
 table.word_results
-  :margin 5px
   :font-family arial
-  :width 40%
+  :width 100%
   :border 1px solid gray
-  :background #aaf
-  :padding 1px
+  :background #ffa
   caption
     :background #fff
     :text-align center
@@ -46,13 +45,11 @@ table.word_results
   th
     :text-align left
     
-table.sense_results
-  :margin 5px
+table.synset_results
   :font-family arial
-  :width 60%
+  :width 100%
   :border 1px solid gray
   :background #aaf
-  :padding 1px
   caption
     :background #fff
     :text-align center
@@ -61,5 +58,14 @@ table.sense_results
   th
     :text-align center
 
+#results-synsets
+  :float left 
+  :width 60%
+  :padding 5px  
+   
+#results-word
+  :float right
+  :width 30%
+  :padding 5px
 
 

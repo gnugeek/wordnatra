@@ -1,21 +1,23 @@
-%table.word_results{:summary=>"Wordnet search results for word #{@word.lemma}"}
-  %caption= "Word: #{@word.lemma}"  
-  %tbody.word_results
-    %tr
-      %th wordid:
-      %td= @word.wordid
-    %tr
-      %th lemma:
-      %td= @word.lemma
-%p/
-%table.sense_results{:summary=>"Wordnet search results - senses for word #{@word.lemma}"}
-  %caption="Synsets for #{@word.lemma}"
-  %tbody.synset_results
-    %tr
-      %th category
-      %th definition
-    - @word.senses.each do |sense|
+#results-word
+  %table.word_results{:summary=>"Wordnet search results for word #{@word.lemma}"}
+    %caption= "Word: #{@word.lemma}"  
+    %tbody.word_results
       %tr
-        %td= sense.synset.categorydef.name
-        %td= sense.synset.definition
+        %th wordid:
+        %td= @word.wordid
+        %tr
+        %th lemma:
+        %td= @word.lemma
         
+#results-synsets
+  %table.synset_results{:summary=>"Wordnet search results - senses for word #{@word.lemma}"}
+    %caption="Synsets for #{@word.lemma}"
+    %tbody.synset_results
+      %tr
+        %th category
+        %th definition
+        - @word.senses.each do |sense|
+          %tr
+            %td= sense.synset.categorydef.name
+            %td= sense.synset.definition
+
