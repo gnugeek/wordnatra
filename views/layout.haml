@@ -1,0 +1,15 @@
+!!!
+%html{:lang => "en"}
+  %head
+    %title Wordnatra
+    %link{:rel=>'stylesheet', :href=>'/stylesheets/style.css', :type => "text/css"}
+    %script{:type=>'text/javascript', :src=>'jquery.js'}
+  %body
+    #banner Wordnatra
+    
+    #wordnet-search
+      %form{:method => 'post'}
+        %input{:type=>'text', :size=>40, :name=>'lemma', :id=>'lemma_search'}
+        %input{:type =>'submit', :value=>'word'}
+    
+    =yield    

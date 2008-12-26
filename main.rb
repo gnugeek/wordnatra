@@ -1,7 +1,7 @@
 require 'init.rb'
 
 get '/' do
-  erb :index
+  haml :index
 end
 
 post '/' do
@@ -10,7 +10,7 @@ end
 
 get '/word/:lemma' do
   @word = Word.first(:lemma => params[:lemma])
-  erb :word
+  haml :word
 end
 
 get '/stylesheets/style.css' do
