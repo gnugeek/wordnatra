@@ -1,17 +1,21 @@
 %table.word_results{:summary=>"Wordnet search results for word #{@word.lemma}"}
   %caption= "Word: #{@word.lemma}"  
-  %tbody.results
+  %tbody.word_results
     %tr
-      %th wordid
+      %th wordid:
       %td= @word.wordid
     %tr
-      %th lemma
+      %th lemma:
       %td= @word.lemma
-
-%script{:type => "text/javascript"}
-  $("caption").click(function(event){
-  $("tbody.results").toggle();
-  return false;
-  });
-
-
+%p/
+%table.sense_results{:summary=>"Wordnet search results - senses for word #{@word.lemma}"}
+  %caption="Synsets for #{@word.lemma}"
+  %tbody.synset_results
+    %tr
+      %th category
+      %th definition
+    - @word.senses.each do |sense|
+      %tr
+        %td= sense.synset.categorydef.name
+        %td= sense.synset.definition
+        
