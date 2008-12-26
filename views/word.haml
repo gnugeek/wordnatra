@@ -1,16 +1,17 @@
-%table.results{:summary=>"Wordnet search results for word #{@word.lemma}"}
-  %tr
-    %th wordid
-    %td= @word.wordid
-  %tr
-    %th lemma
-    %td= @word.lemma
-    
+%table.word_results{:summary=>"Wordnet search results for word #{@word.lemma}"}
+  %caption= "Word: #{@word.lemma}"  
+  %tbody.results
+    %tr
+      %th wordid
+      %td= @word.wordid
+    %tr
+      %th lemma
+      %td= @word.lemma
+
 %script{:type => "text/javascript"}
-  $(document).ready(function(){
-  alert("Thanks for visiting!");
+  $("caption").click(function(event){
+  $("tbody.results").toggle();
+  return false;
   });
-  
-  
-  
-  
+
+
