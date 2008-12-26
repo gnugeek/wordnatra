@@ -1,6 +1,6 @@
 #results-word
   %table.word_results{:summary=>"Wordnet search results for word #{@word.lemma}"}
-    %caption= "Word: #{@word.lemma}"  
+    %caption.word_results= "Word: #{@word.lemma}"  
     %tbody.word_results
       %tr
         %th wordid:
@@ -11,13 +11,25 @@
         
 #results-synsets
   %table.synset_results{:summary=>"Wordnet search results - senses for word #{@word.lemma}"}
-    %caption="Synsets for #{@word.lemma}"
+    %caption.synset_results="Synsets for #{@word.lemma}"
     %tbody.synset_results
       %tr
         %th category
         %th definition
-        - @word.senses.each do |sense|
-          %tr
-            %td= sense.synset.categorydef.name
-            %td= sense.synset.definition
+      - @word.senses.each do |sense|
+        %tr
+          %td= sense.synset.categorydef.name
+          %td= sense.synset.definition
+        
+%script
+  $(document).ready(function(){
+  $("caption.word_results").click(function(event) {
+  $("tbody.word_results").toggle() });
+  });
+  
+%script
+  $(document).ready(function(){
+  $("caption.synset_results").click(function(event) {
+  $("tbody.synset_results").toggle() });
+  });
 
