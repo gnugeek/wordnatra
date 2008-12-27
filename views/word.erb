@@ -25,7 +25,7 @@
       </tr>
       <% @word.senses.each do |sense| %>
       <tr>
-        <td id='category_<%= @word.lemma %>'  class='category_data'>sense.category_def.name</td>
+        <td id='category_<%= @word.lemma %>'  class='category_data'><%= sense.category_def.name %></td>
         <td id='definition_<%= @word.lemma %>' class='definition'><%= sense.synset.definition %></td>
         <td class='sample'><%= show_samples(sense.synset) %></td>
       </tr>
