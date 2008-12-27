@@ -16,10 +16,12 @@
       %tr
         %th category
         %th definition
+        %th samples
       - @word.senses.each do |sense|
-        %tr
+        %tr{:class=> sense.synsetid}
           %td= sense.synset.categorydef.name
           %td= sense.synset.definition
+          %td= show_samples(sense.synset)
         
 %script
   $(document).ready(function(){
@@ -32,4 +34,3 @@
   $("caption.synset_results").click(function(event) {
   $("tbody.synset_results").toggle() });
   });
-
