@@ -7,14 +7,14 @@
   </head>
   <body>
     <div id='banner'>
-
       Wordnatra
     </div>
     <div id='search'>
-      <form action='/' method='post'>
+      <form id="wordsearch" action='/' method='post'>
         <input id='lemma-search' name='lemma' size='40' type='text' />
         <input type='submit' value='word' />
       </form>
     </div>
     <div id='content'>
     <%= yield %>
+    </div>
