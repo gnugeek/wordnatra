@@ -3,7 +3,9 @@ def link_to(label,url)
 end
 
 def show_samples(synset)
-  list = ''
-  return list if synset.samples.nil?
-  synset.samples.first.sample
+  begin
+    synset.samples.first.sample
+  rescue
+    ""
+  end
 end
