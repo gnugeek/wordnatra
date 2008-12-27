@@ -1,7 +1,7 @@
 require 'init.rb'
 
 get '/' do
-  haml :index
+  erb :index
 end
 
 post '/' do
@@ -10,7 +10,7 @@ end
 
 get '/word/:lemma' do
   @word = Word.first(:lemma => params[:lemma])
-  haml :word
+  erb :word
 end
 
 get '/word/:lemma/to_json' do

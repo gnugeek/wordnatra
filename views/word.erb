@@ -1,0 +1,53 @@
+<div id='results-word'>
+  <table class='word_results' summary='Wordnet search results for word hello'>
+    <caption class='word_results'>Word: hello</caption>
+    <tbody class='word_results'>
+      <tr>
+        <th>wordid:</th>
+        <td><%= @word.wordid %></td>
+
+        <tr></tr>
+        <th>lemma:</th>
+        <td><%= @word.lemma %></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div id='results-synsets'>
+
+  <table class='synset_results' summary='Wordnet search results - senses for word hello'>
+    <caption class='synset_results'>Synsets for hello</caption>
+    <tbody class='synset_results'>
+      <tr>
+        <th>category</th>
+        <th>definition</th>
+        <th>samples</th>
+      
+        
+      </tr>
+      <% @word.senses.each do |sense| %>
+      <tr>
+        <td>noun.communication</td>
+        <td><%= sense.synset.definition %></td>
+        <td><%= show_samples(sense.synset) %></td>
+      </tr>
+      <% end %>
+    </tbody>
+
+  </table>
+</div>
+<script>
+  $(document).ready(function(){
+    $("caption.word_results").click(function(event) {
+      $("tbody.word_results").toggle() 
+    });
+  });
+</script>
+
+<script>
+  $(document).ready(function(){
+    $("caption.synset_results").click(function(event) {
+      $("tbody.synset_results").toggle()
+    });
+  });
+</script>

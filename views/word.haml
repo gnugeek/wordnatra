@@ -8,6 +8,15 @@
         %tr
         %th lemma:
         %td= @word.lemma
+  %table.word_nav
+    %tbody.word_nav
+      %tr
+        %tr
+          %td hypernyms
+        %tr
+          %td hyponyms
+        %tr
+          %td synonyms
         
 #results-synsets
   %table.synset_results{:summary=>"Wordnet search results - senses for word #{@word.lemma}"}

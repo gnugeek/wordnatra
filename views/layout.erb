@@ -1,0 +1,20 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang='en'>
+  <head>
+    <title>Wordnatra</title>
+    <link href='/stylesheets/style.css' rel='stylesheet' type='text/css' />
+    <script src='http://jquery.com/src/jquery-latest.js' type='text/javascript'></script>
+  </head>
+  <body>
+    <div id='banner'>
+
+      Wordnatra
+    </div>
+    <div id='search'>
+      <form action='/' method='post'>
+        <input id='lemma-search' name='lemma' size='40' type='text' />
+        <input type='submit' value='word' />
+      </form>
+    </div>
+    <div id='content'>
+    <%= yield %>
